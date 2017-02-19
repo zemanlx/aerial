@@ -2,7 +2,6 @@ languageCode = "en-us"
 title = "Aerial"
 baseurl = "http://example.org/"
 theme = "aerial"
-favicon = "favicon.ico"
 
 [params]
   name = "Adam Jensen"
@@ -10,6 +9,7 @@ favicon = "favicon.ico"
   copyright = "Untitled"
   #Disable the scrolling background by entering any string for bg_scroll. Enable by leaving bg_scroll empty.
   bg_scroll = ""
+  favicon = "favicon.ico"
 
 [[params.social]]
   medium = "Twitter"
