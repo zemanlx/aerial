@@ -13,6 +13,10 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    {{ with .Site.Params.favicon }}
+     <link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
+     <link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
+    {{ end }}
 	</head>
 	<body class="loading">
 		<div id="wrapper">
@@ -46,5 +50,7 @@
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
+
+    {{ partial "js.html" . }}
 	</body>
 </html>
