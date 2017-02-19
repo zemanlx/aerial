@@ -52,6 +52,12 @@ The Scrolling Background:
         of your image. Change $bg-width if your image is something other than
         1500px wide.
 
+### Add custom js snippets
+
+Should you choose to add custom js snippet, create a `layouts/partials` folder with `js.html` file and put your js code in this file.
+
+This can be useful for adding [Google Analytics](https://gohugo.io/extras/analytics/). Just add `{{ template "_internal/google_analytics.html" . }}` to the file and configure the config file with your `googleAnalytics` tracking id.
+
 ## License
 
 This theme is released under the CC BY 3.0 license. For more information, read the [License](https://github.com/sethmacleod/aerial/blob/master/LICENSE.md).
