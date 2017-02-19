@@ -58,6 +58,10 @@ Should you choose to add custom js snippet, create a `layouts/partials` folder w
 
 This can be useful for adding [Google Analytics](https://gohugo.io/extras/analytics/). Just add `{{ template "_internal/google_analytics.html" . }}` to the file and configure the config file with your `googleAnalytics` tracking id.
 
+## Customize favicon.ico
+
+You can customize a `favicon.ico` by adding it to `static` folder.
+
 ## License
 
 This theme is released under the CC BY 3.0 license. For more information, read the [License](https://github.com/sethmacleod/aerial/blob/master/LICENSE.md).
