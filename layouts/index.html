@@ -41,15 +41,67 @@
 				</nav>
 			</header>
 
+			<div id="legal">
+				<div id="terms" class="overlay">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeTerms()">&times;</a>
+					<div class="overlay-content">
+						<h1>Terms and Conditions</h1>
+						{{ range .Site.Params.terms }}
+						{{ with .title }}<h2>{{ . }}</h2>{{ end }}
+						{{ with .paragraphs }}{{ range . }}
+						<p>{{ . }}</p>{{ end }}
+						{{ end }}
+						{{ with .list }}<ul>{{ range . }}
+							<li>{{ . }}</li>
+							{{ end }}
+						</ul>{{ end }}
+						{{ end }}
+					</div>
+				</div>
+				<div id="privacy" class="overlay">
+					<a href="javascript:void(0)" class="closebtn" onclick="closePrivacy()">&times;</a>
+					<div class="overlay-content">
+						<h1>Privacy Policy</h1>
+						{{ range .Site.Params.privacy }}
+						{{ with .title }}<h2>{{ . }}</h2>{{ end }}
+						{{ with .paragraphs }}{{ range . }}
+						<p>{{ . }}</p>{{ end }}
+						{{ end }}
+						{{ with .list }}<ul>{{ range . }}
+							<li>{{ . }}</li>
+							{{ end }}
+						</ul>{{ end }}
+						{{ end }}
+					</div>
+				</div>
+			</div>
 			<!-- Footer -->
 			<footer id="footer">
-				<span class="copyright">&copy; {{ .Site.Params.copyright }}. &nbsp;&bull;&nbsp; Design: <a
-						href="http://html5up.net">HTML5
-						UP</a>. &nbsp;&bull;&nbsp; Powered by <a href="https://www.gohugo.io/">Hugo.</a></span>
+				<span class="copyright">&copy; {{ .Site.Params.copyright }} &nbsp;&bull;&nbsp; <span class="inner-a"
+						onclick="openTerms()">Terms and Conditions</span>
+					&nbsp;&bull;&nbsp; <span class="inner-a" onclick="openPrivacy()">Privacy Policy</span>
+					&nbsp;&bull;&nbsp; Based on <a href="http://html5up.net">HTML5
+						UP</a> template. </span>
 			</footer>
 
 		</div>
 	</div>
+
+	<script>
+		function openTerms() {
+			document.getElementById("terms").style.height = "100%";
+		}
+		function closeTerms() {
+			document.getElementById("terms").style.height = "0%";
+		}
+		function openPrivacy() {
+			document.getElementById("privacy").style.height = "100%";
+		}
+		function closePrivacy() {
+			document.getElementById("privacy").style.height = "0%";
+		}
+	</script>
+
 	<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
 	<script>
 		window.onload = function () { document.body.className = ''; }
